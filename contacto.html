@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>Contacto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+	<div class="ccontacto">
+		<div id="header">
+			<img class="logo" src="imagenes/logop.jpg">
+			<ul class="texthe">
+				<li>
+					<a class="nav" href="index.html">INICIO</a>
+				</li>
+				<li>
+					<a class="nav" href="productos.html">PRODUCTOS</a>
+				</li>
+				<li>
+					<a class="nav" href="preguntas.html">PREGUNTAS</a>
+				</li>
+				<li>
+					<a class="nav" href="contacto.html" style="text-decoration: underline; font-weight: bold;">CONTACTO</a>
+				</li>
+			</ul>
+		</div>
+		<div class="ctext">
+			<p>CONTACTO</p>
+		</div>
+		<div class="contacto">
+			<form class="fcontacto" action="contacto.html" method="POST" enctype="multipart/form-data">
+					<input class="form" type="text" name="Nombre" placeholder="Nombre">
+					<input class="form" type="email" name="E-Mail" placeholder="E-Mail">
+					<input class="form" type="tel" name="Telefono" placeholder="Telefono">		
+					<textarea name="mensaje" placeholder="Mensaje" ></textarea>			
+					<input class="botone" type="submit" name="enviar" value="ENVIAR">			
+			</form>
+			<div class="otro">
+				<div class="mail">
+					<img src="imagenes/mail.jpg">
+					<p>bukis.agenda@gmail.com</p>
+				</div>
+				<div class="otraredes">
+					<p>Tambien puedes encontrarnos en:</p>
+					<div>
+						<img src="imagenes/instagram2.jpg">
+						<p>Instagram</p>
+					</div>
+					<div>
+						<img src="imagenes/twitter2.jpg">
+						<p>Twitter</p>
+					</div>
+					<div>
+						<img src="imagenes/facebook.jpg">
+						<p>Facebook</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class=" navfoot dropup-center dropup">
+        <button class="botontext btn btn-secondary dropdown-toggle " type="button" id="dropupCenterBtn" data-bs-toggle="dropdown" aria-expanded="false">
+          Navegacion
+ 	      </button>
+        	<ul class="dropdown-menu" aria-labelledby="dropupCenterBtn">
+            <li><a class="dropdown-item" href="index.html">Inicio</a></li>
+            <li><a class="dropdown-item" href="productos.html">Productos</a></li>
+            <li><a class="dropdown-item" href="preguntas.html">Preguntas</a></li>
+            <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+          </ul>
+      </div>
+			<div class="redes">
+				<p class="re">Seguinos en nuestras redes</p>
+				<div class="redima">
+					<img class="insta" src="imagenes/instagram.jpg">
+					<img class="insta" src="imagenes/twitter.jpg">
+				</div>
+			</div>
+			<div class="pagosinfo">
+				<img class="pagos" src="imagenes/pagos.jpg">
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
