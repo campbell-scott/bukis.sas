@@ -1,0 +1,13 @@
+Index:
+Use un h1 para el logo.
+Use un h2 para el titulo de "Productos destacados"
+Productos:
+Use un h1 para el titulo de la pagina "PPRODUCTOS".
+Preguntas:
+Use un h1 en para titulo de la pagina "PREGUNTAS FRECUENTES".
+Contacto:
+Use un h1 en para titulo de la pagina "CONTACTO".
+Producto1:
+Use un h1 en la imagen
+Use un h1 en el nombre del producto
+Use una meta etiqueta de description que describe el producto.

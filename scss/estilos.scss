@@ -3,20 +3,41 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
 body{
 	background-image: url(../imagenes/fondo3.jpg);
+	font-family: 'Josefin Sans', sans-serif;
 }
                                                          /*css compartido*/
+%flexrow{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+%flexcolumn{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@mixin escala($w, $h){
+	width: $w;
+	height: $h;
+}
+$colores:(
+    blanco: white,
+    negro: black,
+    buki:  #bf957f,
+	gris: lightgrey
+);
 #header{
-	width: 100%;
-	height: 120px;
-	background-color: #000;
+	@include escala(100%, 120px);
+	background-color: map-get($colores, negro);
 	position: sticky;
 	z-index: 100;
 	padding: 0 10% 0 10%;
-	display: flex;
-	flex-direction: row;
+	@extend %flexrow;
 	justify-content: space-between;
 	align-items: center;
     @media all and (max-width: 992px){
@@ -54,12 +75,11 @@ body{
     .texthe{
         list-style-type: none;
         font-family: 'Josefin Sans', sans-serif;
-        display: flex;
-        flex-direction: row;
+        @extend %flexrow;
         padding: 0;
     }
     .nav{
-        color: white;
+        color: map-get($colores, blanco);
         text-decoration: none;
         font-size: 1.3rem;
         margin-left: 70px;
@@ -81,30 +101,28 @@ body{
         }
         &:hover{
             text-decoration: underline;
-            color: white;
+            color: map-get($colores, buki);
             opacity: 0.9;
         }
     }
 }
 .producto{
-	border: solid 20px black;
-	background-color: black;
+	border: solid 20px map-get($colores, negro);
+	background-color: map-get($colores, negro);
 	border-radius: 10px;
 	transition: all 250ms;
     &:hover{
         transform: scale(1.15);
-        box-shadow: 0 0 5px 1px rgba(0,0,0,.2);
+		box-shadow: 0 1px 10px 1px map-get($colores, negro);
     }
 }
 #footer{
-	width: 100%;
-	height: 120px;
-	background-color: #000;
+	@include escala(100%, 120px);
+	background-color: map-get($colores, negro);
 	position: sticky;
 	z-index: 100;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	@extend %flexrow;
     @media all and (max-width: 992px){
         height: 110px;
     }
@@ -120,9 +138,7 @@ body{
     .navfoot, .redes, .pagosinfo{
         width: 33.33333%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @extend %flexcolumn;
     }
     .navfoot, .redes{
         @media all and (max-width: 576px){
@@ -155,7 +171,7 @@ body{
         }
     }
     .re{
-        color: white;
+        color: map-get($colores, blanco);
         font-size: 1rem;
         text-align: center;
         @media all and (max-width: 992px){
@@ -193,7 +209,7 @@ body{
     }
     .banner{
         grid-column: 1/4;
-        border: solid black 5px;
+        border: solid 5px map-get($colores, negro);
         border-radius: 5px;
         padding: 0;
         width: 90%;
@@ -205,32 +221,41 @@ body{
 	    flex-wrap: wrap;
 	    width: 100%;
 	    justify-self:center;
-	    padding: 0 10% 0 10%;
+	    padding: 0 5% 0 5%;
         .info{
             width: 33.33333%;
             padding: 20px;
             display: flex;
             flex-direction: row;
             align-self: center;
-            @media all and (max-width: 992px){
+			font-size: 1.2rem;
+			font-family: 'Josefin Sans', sans-serif;
+            @media all and (max-width: 1100px){
                 width: 100%;
-                font-size: 0.8rem;
+                font-size: 1rem;
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
+			.bold{
+				font-weight: 500
+			}
             p{
-                margin-left: 5px;
+                margin: 0 0 0 5px;
+				font-weight: 100;
             }
             img{
-                height: 50px;
+                height: 70px;
                 @media all and (max-width: 992px){
+                    height: 50px;
+                }
+				@media all and (max-width: 600px){
                     height: 40px;
                 }
             }
             .cuadrado{
                 height: 10px;
-                border-bottom: black solid;
+                border-bottom: map-get($colores, negro);
                 width: 100%
             }
         }
@@ -240,9 +265,9 @@ body{
         .pdtext{
             margin-top: 70px;
             margin-bottom: 50px;
+			font-weight: 700;
             font-size: 2.5rem;
-            display: flex;
-            justify-content: center;
+			@extend %flexrow;
             @media all and (max-width: 992px){
                 margin-top: 50px;
                 font-size: 2rem;
@@ -440,9 +465,8 @@ body{
 }
 .fcontacto{
 	margin: 0 5%;
-	width: 40%;
-	height: 450px;
-	background-color: black;
+	@include escala(40%, 450px);
+	background-color: map-get($colores, negro);
 	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
@@ -451,26 +475,23 @@ body{
 	opacity: 0.9;
 }
 .form{
-	width: 95%;
-	height: 15%;
-	background-color: black;
-	color: white;
+	@include escala(95%, 15%);
+	background-color: map-get($colores, negro);
+	color: map-get($colores, blanco);
 	font-size: 1.3rem;
 	border: none;
 }
 textarea{
-	width: 95%;
-	height: 25%;
-	background-color: black;
-	color: white;
+	@include escala(95%, 25%);
+	background-color: map-get($colores, negro);
+	color: map-get($colores, blanco);
 	font-size: 1.3rem;
 	border: none;
 }
 .botone{
-	width: 35%;
-	height: 8%;
+	@include escala(35%, 8%);
 	font-size: 1.4rem;
-	background-color: lightgrey;
+	background-color: map-get($colores, gris);
 	border-radius: 20px;
 }
 .otro{
@@ -548,8 +569,7 @@ textarea{
 		flex-direction: column;
 	}
 	.fcontacto{
-		width: 90%;
-		height: 400px;
+		@include escala(90%, 400px);
 	}
 	.otro{
 		width: 90%;
@@ -653,7 +673,7 @@ textarea{
 .imgproducto img{
 	object-fit: cover;
 	width: 100%;
-	border: solid black 10px;
+	border: solid 10px map-get($colores, negro);
 	border-radius: 10px;
 }
 .titulop{
@@ -670,11 +690,11 @@ textarea{
 	font-size: 1.2rem;
 }
 .accordion{
-	border: solid black 5px;
+	border: solid 5px map-get($colores, negro);
 	border-radius: 5px;
 }
 .formasp{
-	border-top: solid black 5px;
+	border-top: solid 5px map-get($colores, negro);
 }
 .accordion img{
 	width: 60px;
